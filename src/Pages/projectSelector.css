@@ -1,0 +1,27 @@
+/* ProductSlider.css */
+.product-box {
+    width: 170px; /* Adjust the width as needed */
+    margin: 0 100px; /* Adjust the margin as needed */
+    min-height: 300px;
+  }
+  
+  .product-box img {
+    width: 90%;
+    height: auto;
+  }
+  
+  .product-box__content {
+    padding: 10px;
+  }
+  
+  .product-box__title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .product-box__desc {
+    font-size: 14px;
+    color: #666;
+  }
+  

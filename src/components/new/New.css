@@ -1,0 +1,23 @@
+/* New.css */
+.image-mapper-container {
+    position: relative;
+  }
+  
+  .slider-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .slider-nav-btn.prev {
+    left: 20px;
+  }
+  
+  .slider-nav-btn.next {
+    right: 20px;
+  }
+  
