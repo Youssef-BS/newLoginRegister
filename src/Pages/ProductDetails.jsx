@@ -8,6 +8,7 @@ import AccountPage from '../components/Accountinfo/Accountinfo';
 function ProductDetail() {
   const [xDisplayStyle, setXDisplayStyle] = useState('none');
   const [bDisplayStyle, setBDisplayStyle] = useState('block');
+  const [activeTab, setActiveTab] = useState('features');
   const params = useParams()
   const dispatch = useDispatch();
   const ProductState = useSelector((state)=> state.product.Product)
@@ -344,118 +345,51 @@ const product = [
                 <div className={"product-page-section-bottom"}>
                   <nav className="position-relative mb-lg-5 mb-3">
                     <div className="nav nav-tabs d-flex justify-content-start justify-content-lg-center border-btm-unset jsProductTabs" id="product-tabs" role="tablist">
-                      <button className="nav-link active" id="features-tab" data-toggle="tab" data-target="#features" type="button" role="tab" aria-controls="features" aria-selected="true">Features</button>
-                      <button className="nav-link" id="techical-details-tab" data-toggle="tab" data-target="#techical-details" type="button" role="tab" aria-controls="techical-details" aria-selected="true">Technical Details</button>
-                      <button className="nav-link" id="accesorries-tab" data-toggle="tab" data-target="#accesorries" type="button" role="tab" aria-controls="accesorries" aria-selected="true">Accessories</button>
-                    <button className="nav-link" id="documents-tab" data-toggle="tab" data-target="#documents" type="button" role="tab" aria-controls="documents" aria-selected="true">Documents</button>
-                    <button className="nav-link" id="videos-tab" data-toggle="tab" data-target="#videos" type="button" role="tab" aria-controls="videos" aria-selected="true">Videos</button>
+                    <button className={`nav-link ${activeTab === 'features' ? 'active' : ''}`} id="features-tab" data-toggle="tab" data-target="#features" type="button" role="tab" aria-controls="features" aria-selected={activeTab === 'features'} onClick={() => setActiveTab('features')}>Features</button>
+<button className={`nav-link ${activeTab === 'technical-details' ? 'active' : ''}`} id="techical-details-tab" data-toggle="tab" data-target="#techical-details" type="button" role="tab" aria-controls="techical-details" aria-selected={activeTab === 'technical-details'} onClick={() => setActiveTab('technical-details')}>Technical Details</button>
+<button className={`nav-link ${activeTab === 'accessories' ? 'active' : ''}`} id="accesorries-tab" data-toggle="tab" data-target="#accesorries" type="button" role="tab" aria-controls="accesorries" aria-selected={activeTab === 'accessories'} onClick={() => setActiveTab('accessories')}>Accessories</button>
+<button className={`nav-link ${activeTab === 'documents' ? 'active' : ''}`} id="documents-tab" data-toggle="tab" data-target="#documents" type="button" role="tab" aria-controls="documents" aria-selected={activeTab === 'documents'} onClick={() => setActiveTab('documents')}>Documents</button>
+<button className={`nav-link ${activeTab === 'videos' ? 'active' : ''}`} id="videos-tab" data-toggle="tab" data-target="#videos" type="button" role="tab" aria-controls="videos" aria-selected={activeTab === 'videos'} onClick={() => setActiveTab('videos')}>Videos</button>
+
                       {/* Add more tabs here */}
                     </div>
                   </nav>
-               <div className="tab-content jsProductTabsContent" id="myTabContent">
-  <div className="tab-pane fade " id="features" role="tabpanel" aria-labelledby="features-tab">
-    <div className="product-info-video-wrapper">
-      <iframe
-        width="100%"
-        height="100%"
-        id="video"
-        src="//www.youtube.com/embed/bGNl3PMiAeQ?enablejsapi=1&amp;html5=1"
-        frameBorder="0"
-        allowFullScreen=""
-        title="FOS Nitro BSW"
-        data-gtm-yt-inspected-8="true"
-      ></iframe>
+                  <div className="tab-content jsProductTabsContent" id="myTabContent">
+  {activeTab === 'features' && (
+    <div className="tab-pane fade show active" id="features" role="tabpanel" aria-labelledby="features-tab">
+      <div className="product-info-video-wrapper">
+        <iframe width="100%" height="100%" id="video" src="//www.youtube.com/embed/bGNl3PMiAeQ?enablejsapi=1&amp;html5=1" frameBorder="0" allowFullScreen="" title="FOS Nitro BSW" data-gtm-yt-inspected-8="true"></iframe>
+      </div>
     </div>
-  </div>
-  <div className="tab-pane fade" id="techical-details" role="tabpanel" aria-labelledby="techical-details-tab">
-  <div className="row">
-      <div className="col-lg-7 m-auto col-single">
-        <div className="accordion accordion--products-details" id="detailsAccordion">
-          <div className="card">
-            <div className="card-header" id="heading-details-1">
-              <div className="collapsed" type="button" data-toggle="collapse" data-target="#details-1" aria-expanded="false" aria-controls="details-1">
-                Product Description
-              </div>
-            </div>
-            <div id="details-1" className="collapse" aria-labelledby="heading-details-1" data-parent="#detailsAccordion">
-              <div className="card-body">
-                <p>Beam/Spot/Wash fixture, based on Stage 295 Watt Discharge Lamp.<br />
-                  The newest technology NEOLUX lamp 295 watt become Nitro BSW&nbsp; the ideal solution<br />
-                  for large events and concerts that demand a work horse luminaire.<br />
-                  &nbsp;</p>
-              </div>
-            </div>
+  )}
+  {activeTab === 'technical-details' && (
+    <div className="tab-pane fade show active" id="technical-details" role="tabpanel" aria-labelledby="technical-details-tab">
+      <div className="row">
+        <div className="col-lg-7 m-auto col-single">
+          <div className="accordion accordion--products-details" id="detailsAccordion">
+            {/* Accordion content here */}
           </div>
-          <div className="card">
-            <div className="card-header" id="heading-details-2">
-              <div className="" type="button" data-toggle="collapsed" data-target="#details-2" aria-expanded="false" aria-controls="details-2">
-                Light Source / Optics
-              </div>
-            </div>
-            <div id="details-2" className="collapse show " aria-labelledby="heading-details-2" data-parent="#detailsAccordion">
-              <div className="card-body">
-                <p>Based on Stage 295 Watt discharge lamp, 8000 Kelvin, lifespan of 1500 hours, and maximum luminous flux of 14000 lm.&nbsp;<br />
-                  Linear zoom and focus.<br />
-                  Beam mode offers 3° to 27°, spot mode ranges from 7° to 36° beam angles.<br />
-                  Frost filter for wash light simulation projection.<br />
-                  &nbsp;</p>
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-header" id="heading-details-1">
-              <div className="collapsed" type="button" data-toggle="collapse" data-target="#details-1" aria-expanded="false" aria-controls="details-1">
-                Product Description
-              </div>
-            </div>
-            <div id="details-1" className="collapse" aria-labelledby="heading-details-1" data-parent="#detailsAccordion">
-              <div className="card-body">
-                <p>Beam/Spot/Wash fixture, based on Stage 295 Watt Discharge Lamp.<br />
-                  The newest technology NEOLUX lamp 295 watt become Nitro BSW&nbsp; the ideal solution<br />
-                  for large events and concerts that demand a work horse luminaire.<br />
-                  &nbsp;</p>
-              </div>
-            </div>
-          </div>
-          {/* Additional card elements for Effects, Control, Technical Specifications */}
         </div>
       </div>
     </div>
-</div>
-<div className="tab-pane fade  active show " id="features" role="tabpanel" aria-labelledby="features-tab">
-  <div className="product-page-section product-page-section--slider">
-    <div className="products-carouesl-product-info">
-      <div className="jsProductCarosulFiveProducts slick-initialized slick-slider">
-        <Slider {...settingsProduct}>
-                  {/* Render product slides */}
-                  {products.map((product, index) => (
-                    <div key={index}>
-                      <a href={product.link}>
-                        <div className="product-box" data-id={product.id} data-quantity={product.quantity} data-price={product.price} data-on_request={product.onRequest} data-flag_instock={product.inStock} data-set={product.set}>
-                          <div className="product-box__img">
-                            <img className="lazy-scroll loaded" src={product.image} />
-                          </div>
-                          <div className="product-box__title">
-                            <span>{product.name}</span>
-                          </div>
-                          <div className="product-box__code">
-                            <div className="product-box__code"></div>
-                          </div>
-                          <p className="product-box__desc">{product.description}</p>
-                        </div>
-                      </a>
-                    </div>
-                  ))}
-                </Slider>
-
-         
-      </div>
+  )}
+  {activeTab === 'accessories' && (
+    <div className="tab-pane fade show active" id="accessories" role="tabpanel" aria-labelledby="accessories-tab">
+      {/* Accessories content here */}
     </div>
-  </div>
-  </div>
-
-  {/* Additional tab panes go here */}
+  )}
+  {activeTab === 'documents' && (
+    <div className="tab-pane fade show active" id="documents" role="tabpanel" aria-labelledby="documents-tab">
+      {/* Documents content here */}
+    </div>
+  )}
+  {activeTab === 'videos' && (
+    <div className="tab-pane fade show active" id="videos" role="tabpanel" aria-labelledby="videos-tab">
+      {/* Videos content here */}
+    </div>
+  )}
 </div>
+
 
                 </div>
               </div>

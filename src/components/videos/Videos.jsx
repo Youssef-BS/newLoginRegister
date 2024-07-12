@@ -45,7 +45,7 @@ const Videos = () => {
               <div className="product-info-video-wrapper product-info-video-wrapper--fullradius">
                 <div className="video-slider__video-wrapper jsVideoSlideWrapper jsNotYtVideo">
                   <ReactPlayer
-                    url="https://videos.pexels.com/video-files/5948574/5948574-hd_1920_1080_30fps.mp4"
+                    url="https://cdn.pixabay.com/video/2022/09/11/130937-749667866_large.mp4"
                     playing={true}
                     loop={true}
                     muted={true}
@@ -74,7 +74,7 @@ const Videos = () => {
               <div className="product-info-video-wrapper product-info-video-wrapper--fullradius">
                 <div className="video-slider__video-wrapper jsVideoSlideWrapper jsNotYtVideo">
                   <ReactPlayer
-                    url="https://videos.pexels.com/video-files/5948574/5948574-hd_1920_1080_30fps.mp4"
+                    url="https://cdn.pixabay.com/video/2022/09/11/130937-749667866_large.mp4"
                     playing={true}
                     loop={true}
                     muted={true}
@@ -102,7 +102,7 @@ const Videos = () => {
               <div className="product-info-video-wrapper product-info-video-wrapper--fullradius">
                 <div className="video-slider__video-wrapper jsVideoSlideWrapper jsNotYtVideo">
                   <ReactPlayer
-                    url="https://videos.pexels.com/video-files/5948574/5948574-hd_1920_1080_30fps.mp4"
+                    url="https://cdn.pixabay.com/video/2022/09/11/130937-749667866_large.mp4"
                     playing={true}
                     loop={true}
                     muted={true}

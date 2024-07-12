@@ -18,6 +18,11 @@ import ContactUs from './Pages/ContactUs';
 import Support from './Pages/Support';
 import AccountInfo from './Pages/AccountInfo';
 import LogOffPage from './Pages/LogOff';
+import ShoppingCart from './Pages/ShoppingCart';
+import CompleteOrder from './Pages/CompleteOrder';
+import OrderList from './Pages/wishlist';
+import Store from './Pages/Store';
+
 
 
     const Layout = ({ children }) => {
@@ -52,7 +57,7 @@ import LogOffPage from './Pages/LogOff';
                     element={<Layout><AccountInfo /></Layout>}
                 />
                 <Route
-                    path="/project-select"
+                    path="/project-select/:id"
                     element={<Layout><ImageMapperContainer /></Layout>}
                 />
                  <Route
@@ -78,6 +83,21 @@ import LogOffPage from './Pages/LogOff';
                 <Route
                     path="/AllNews"
                     element={<Layout><AllNews /></Layout>}
+                />
+                 <Route path="/store" 
+                element={<Layout><Store/></Layout>}
+                />
+                 <Route
+                    path="/shopcart"
+                    element={<Layout><ShoppingCart /></Layout>}
+                />
+                   <Route
+                    path="/complete-order"
+                    element={<Layout><CompleteOrder/></Layout>}
+                />
+                 <Route
+                    path="/wishlist"
+                    element={<Layout><OrderList/></Layout>}
                 />
             </Routes>
         </Router>
