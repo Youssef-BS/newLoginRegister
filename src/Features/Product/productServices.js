@@ -32,9 +32,6 @@ const GetProductById = async (id) => {
     `http://localhost:3000/pro/product/${id}`,
    
   );
-  console.log(response.data)
-  
-
   return response.data;
 };
 

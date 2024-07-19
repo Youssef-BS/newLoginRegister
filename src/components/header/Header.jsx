@@ -157,8 +157,8 @@ const HeaderComponent = () => {
                 {CurrentUser ? (
                   <div id="logged" className="login h-100 d-flex align-items-center">
                     <a href="#" id="login-popup-link" className="login-popup-link h-100">
-                      <span className="user-name">{CurrentUser.user.firstname}</span>
-                      <AccountCircleIcon style={{ color: '#F58220' }} />
+                      <span className="user-name" style={{color : "white"}}>{CurrentUser.user.firstname}</span>
+                      <AccountCircleIcon style={{ color: 'white' }} />
                     </a>
                     <ul className="logged_in_options" >
                       <li>

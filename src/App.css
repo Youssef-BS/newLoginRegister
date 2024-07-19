@@ -4,7 +4,7 @@
   --purple: #6f42c1;
   --pink: #e83e8c;
   --red: #dc3545;
-  --orange: #fd7e14;
+  --orange: #dc3545;
   --yellow: #ffc107;
   --green: #28a745;
   --teal: #20c997;
@@ -10367,7 +10367,7 @@ a.text-dark:focus,a.text-dark:hover {
   --black-dark: #080808;
   --black-light: #070707;
   --black-lighter: #171717;
-  --orange: #F58220;
+  --orange: red;
 }
 
 html,body {

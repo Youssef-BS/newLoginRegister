@@ -23,6 +23,8 @@ const ProductBox = () => {
     dispatch(GetMarkets());
     dispatch(GetAllProducts());
   }, [dispatch]);
+  
+  console.log("yeahh" , FeaturedP , MarketState , ProductState);
 
   const handleMarketClick = (market) => {
     setActiveMarket(market.id);
@@ -210,12 +212,12 @@ const ProductBox = () => {
               <div className="featured-products__slider jsFeaturedProductsHome featured-products__slider h-100 slick-initialized slick-slider slick-dotted">
                 <Slider {...carouselSettings}>
                   {FeaturedP?.map(product => (
-                    <div key={product.Product.id} className="featured-products new-in-featured__box" style={{ backgroundImage: `url(${product.imageUrl})` }}>
+                    <div key={product.Product.id} className="featured-products new-in-featured__box" style={{ backgroundImage: `url(${product.Product.imageUrl})` }}>
                       <Typography variant="h2" className="new-in-featured__title">{product.title}</Typography>
-                      <div className="featured-products__tag">{product.title}</div>
+                      <div className="featured-products__tag">{product.Product.title}</div>
                       <div className="product-box">
                         <a href={product.Product.link} className="product-box__img" tabIndex="-1">
-                          <img src={product.Product.image} alt={product.title} />
+                          <img src={product.Product.image} alt={product.Product.title} />
                         </a>
                         <a href={product.link} className="product-box__title" tabIndex="-1">
                           <Typography variant="body1">{product.Product.title}</Typography>
